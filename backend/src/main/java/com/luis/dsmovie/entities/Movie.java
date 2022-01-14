@@ -2,10 +2,14 @@ package com.luis.dsmovie.entities;
 
 import javax.persistence.Table;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "tb_movie")
@@ -18,6 +22,9 @@ public class Movie {
 	private Double score;
 	private Integer count;
 	private String image;
+
+	@OneToMany(mappedBy = "id.movie")
+	private Set<Score> scores = new HashSet<>();
 
 	public Movie() {
 	}
@@ -41,13 +48,24 @@ public class Movie {
 	public Double getScore() {
 		return score;
 	}
+	
+	public void setScore(Double score) {
+		this.score = score;
+	}
 
 	public Integer getCount() {
 		return count;
+	}
+	
+	public void setCount(Integer count) {
+		this.count = count;
 	}
 
 	public String getImage() {
 		return image;
 	}
 
+	public Set<Score> getScores() {
+		return scores;
+	}
 }

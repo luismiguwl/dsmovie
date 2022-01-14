@@ -23,6 +23,10 @@ public class Score {
 		return value;
 	}
 	
+	public void setValue(Double value) {
+		this.value = value;
+	}
+	
 	public void setMovie(Movie movie) {
 		id.setMovie(movie);
 	}
