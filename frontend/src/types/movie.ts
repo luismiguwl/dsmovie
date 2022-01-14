@@ -13,7 +13,7 @@ export type MoviePage = {
     totalElements: number;
     size: number;
     number: number;
-    firts: boolean;
+    first: boolean;
     numberOfElements: number;
     empty: boolean;
 }
